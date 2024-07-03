@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 // Pages Core Import
@@ -11,7 +11,7 @@ import ErrorPage from './modules/core/pages/es_MX/ErrorPage';
 
 const App = () => {
   const navigate = useNavigate();
-  const [userLanguage, setUserLanguage] = useState(navigator.language);
+  const [userLanguage ] = useState(navigator.language);
 
   useEffect(() => {
     let path = '/';
@@ -26,13 +26,6 @@ const App = () => {
     // Introduce un retraso de 2 segundos antes de redirigir
     setTimeout(() => navigate(path, { replace: true }), 2000);
   }, []); // Dependencias vacías para que solo se ejecute una vez al montar
-
-  const handleLanguageChange = (language: string) => {
-    setUserLanguage(language); // Actualiza el idioma seleccionado por el usuario
-
-    // Introduce un retraso de 2 segundos antes de redirigir
-    setTimeout(() => navigate(`/${language}`, { replace: true }), 2000);
-  };
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { Text, Container, ActionIcon, Group, rem, Image, SimpleGrid, Flex, Button } from '@mantine/core';
+import { Text, Container, ActionIcon, Group, rem, Image, SimpleGrid, Flex } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './footerLinks.module.css';
 import imagen1 from '../../../assets/images/TAXICARIBE_TRANSPARENTE.png';
