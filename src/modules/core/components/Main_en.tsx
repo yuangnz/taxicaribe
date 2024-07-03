@@ -1,14 +1,9 @@
 
-import { Overlay, Container, Title, Button, Text, Paper, Center } from '@mantine/core';
+import { Container, Title, Button, Text, Paper, Center } from '@mantine/core';
 import { Avatar, Group, TypographyStylesProvider } from '@mantine/core';
 import {
     MantineProvider,
-    defaultVariantColorsResolver,
-    VariantColorsResolver,
-    parseThemeColor,
     rem,
-    rgba,
-    darken,
     useMantineTheme,
     TextInput,
     Textarea,
@@ -16,14 +11,13 @@ import {
     Grid,
     Flex,
     Image,
-    Divider,
-    Transition
+    Divider
 } from '@mantine/core';
-import { SimpleGrid, Badge, Card, BackgroundImage, Box, ActionIcon } from '@mantine/core';
+import { SimpleGrid, Badge, Card, BackgroundImage, Box } from '@mantine/core';
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from '@tabler/icons-react';
-import { IconHeart } from '@tabler/icons-react';
+
 import { Blockquote } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { Timeline } from '@mantine/core';
@@ -33,13 +27,11 @@ import { IconGitBranch, IconGitPullRequest, IconGitCommit, IconMessageDots } fro
 import classes from './main1.module.css';
 import classes2 from './main2.module.css';
 import '@mantine/core/styles.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
-import imagen1 from '../../../assets/images/Fondo1.png';
-import imagen2 from '../../../assets/images/FondoMaps.png';
-import imagen3 from '../../../assets/images/imageFondo3.jpg';
+
 import imagen4 from '../../../assets/images/TAXICARIBE_TRANSPARENTE.png';
 import imagen5 from '../../../assets/images/phonemaps.png';
 
@@ -65,19 +57,7 @@ const mockdata = [
         icon: IconCookie,
     },
 ];
-const mockdata2 = {
-    image:
-        'https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80',
-    title: 'Verudela Beach',
-    country: 'Croatia',
-    description:
-        'on the Adriatic coastline by one of the most beautiful beaches in Pula.',
-    badges: [
-        { emoji: '☀️', label: 'Sunny weather' },
-        { emoji: '🌊', label: 'Sea' },
-        { emoji: '🤽', label: 'Water sports' },
-    ],
-};
+
 
 
 //Feature section 2 funtions
@@ -85,39 +65,8 @@ const mockdata2 = {
 
 function MainPage() {
 
-    const [isVisible, setIsVisible] = useState(false);
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsVisible(entry.isIntersecting);
-            },
-            {
-                rootMargin: '0px',
-                threshold: 0.1, // Ajusta este valor según tus necesidades
-            }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => {
-            if (sectionRef.current) {
-                observer.disconnect();
-            }
-        };
-    }, []);
 
 
-
-    const { image, title, description, country, badges } = mockdata2;
-    const features2 = badges.map((badge) => (
-        <Badge variant="light" key={badge.label} leftSection={badge.emoji}>
-            {badge.label}
-        </Badge>
-    ));
     const featuresList = [
         {
             icon: IconReceiptOff,
